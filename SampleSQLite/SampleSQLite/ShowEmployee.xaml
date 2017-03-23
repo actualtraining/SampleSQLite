@@ -19,7 +19,7 @@
             </Grid.RowDefinitions>
 
             <Label Text="Emp ID :" HorizontalTextAlignment="End" VerticalTextAlignment="Center" FontSize="Medium" />
-            <Entry Text="{Binding EmpId}" x:Name="txtEmpID" Placeholder="insert emp id" Grid.Column="1" />
+            <Entry Text="{Binding EmpId}" IsEnabled="False" x:Name="txtEmpID" Placeholder="insert emp id" Grid.Column="1" />
 
             <Label Text="Emp Name :" HorizontalTextAlignment="End" VerticalTextAlignment="Center" FontSize="Medium" />
             <Entry Text="{Binding EmpName}" x:Name="txtName" Placeholder="insert emp name" Grid.Row="1" Grid.Column="1" />

@@ -16,9 +16,28 @@ namespace SampleSQLite
         {
             InitializeComponent();
             btnEdit.Clicked += BtnEdit_Clicked;
+            btnDelete.Clicked += BtnDelete_Clicked;
         }
 
-        private void BtnEdit_Clicked(object sender, EventArgs e)
+        private async void BtnDelete_Clicked(object sender, EventArgs e)
+        {
+            var alertResult = await DisplayAlert("Konfirmasi", "Apakah data " + txtName.Text + " akan didelete ?",
+                "Yes", "No");
+            if(alertResult)
+            {
+                var delEmployee = new Employee { EmpId = Convert.ToInt64(txtEmpID.Text) };
+                try
+                {
+                    App.DBUtils.DeleteEmployee(delEmployee);
+                }
+                catch (Exception ex)
+                {
+                    await DisplayAlert("Error", ex.Message, "OK");
+                }
+            }
+        }
+
+        private async void BtnEdit_Clicked(object sender, EventArgs e)
         {
             var editEmployee = new Employee
             {
@@ -28,7 +47,15 @@ namespace SampleSQLite
                 Designation = txtDesignation.Text,
                 Qualification = txtQualification.Text
             };
-
+            try
+            {
+                App.DBUtils.UpdateEmployee(editEmployee);
+                await Navigation.PopAsync();
+            }
+            catch (Exception ex)
+            {
+                await DisplayAlert("Error", ex.Message, "OK");
+            }
         }
     }
 }
