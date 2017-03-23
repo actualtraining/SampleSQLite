@@ -13,8 +13,7 @@ namespace SampleSQLite
         public App()
         {
             InitializeComponent();
-
-            MainPage = new SampleSQLite.MainPage();
+            MainPage = new NavigationPage(new ManageEmployee());
         }
 
         public static DataAccess DBUtils

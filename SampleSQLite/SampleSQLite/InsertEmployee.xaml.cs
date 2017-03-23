@@ -15,6 +15,29 @@ namespace SampleSQLite
         public InsertEmployee()
         {
             InitializeComponent();
+
+            btnSave.Clicked += BtnSave_Clicked;
+        }
+
+        private async void BtnSave_Clicked(object sender, EventArgs e)
+        {
+            var newEmp = new Employee
+            {
+                EmpName = txtEmpName.Text,
+                Designation = txtDesignation.Text,
+                Department = txtDepartment.Text,
+                Qualification = txtQualification.Text
+            };
+
+            try
+            {
+                App.DBUtils.InsertEmployee(newEmp);
+                await Navigation.PopAsync();
+            }
+            catch (Exception ex)
+            {
+                await DisplayAlert("Error", ex.Message, "OK");
+            }
         }
     }
 }
