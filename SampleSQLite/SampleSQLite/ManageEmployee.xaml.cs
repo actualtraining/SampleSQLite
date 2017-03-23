@@ -33,11 +33,15 @@ namespace SampleSQLite
             await Navigation.PushAsync(new InsertEmployee());
         }
 
-        private void LvData_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+        private async void LvData_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
             if (e.SelectedItem == null)
                 return;
             var currEmp = e.SelectedItem as Employee;
+
+            var showEmployee = new ShowEmployee();
+            showEmployee.BindingContext = currEmp;
+            await Navigation.PushAsync(showEmployee);
         }
     }
 }
