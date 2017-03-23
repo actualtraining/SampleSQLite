@@ -29,6 +29,7 @@ namespace SampleSQLite
                 try
                 {
                     App.DBUtils.DeleteEmployee(delEmployee);
+                    await Navigation.PopAsync();
                 }
                 catch (Exception ex)
                 {
