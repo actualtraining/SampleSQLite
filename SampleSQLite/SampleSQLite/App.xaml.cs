@@ -9,11 +9,22 @@ namespace SampleSQLite
 {
     public partial class App : Application
     {
+        private static DataAccess dbUtils;
         public App()
         {
             InitializeComponent();
 
             MainPage = new SampleSQLite.MainPage();
+        }
+
+        public static DataAccess DBUtils
+        {
+            get
+            {
+                if (dbUtils != null)
+                    dbUtils = new DataAccess();
+                return dbUtils;
+            }
         }
 
         protected override void OnStart()
