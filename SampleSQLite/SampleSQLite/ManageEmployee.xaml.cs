@@ -15,6 +15,16 @@ namespace SampleSQLite
         public ManageEmployee()
         {
             InitializeComponent();
+            var empList = App.DBUtils.GetAllEmployee();
+            lvData.ItemsSource = empList;
+            lvData.ItemSelected += LvData_ItemSelected;
+        }
+
+        private void LvData_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+        {
+            if (e.SelectedItem == null)
+                return;
+            var currEmp = e.SelectedItem as Employee;
         }
     }
 }
