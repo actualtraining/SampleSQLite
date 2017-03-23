@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SampleSQLite.ManageEmployee" Title="Manage Employee">
+    <ContentPage.Content>
+        <ListView x:Name="lvData" HasUnevenRows="True" Header="List Of Employee">
+            <ListView.HeaderTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="30" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="80" />
+                            <ColumnDefinition Width="80" />
+                            <ColumnDefinition Width="80" />
+                        </Grid.ColumnDefinitions>
+
+                        <Label Text="EmpID" FontSize="Medium" FontAttributes="Bold" />
+                        <Label Text="Name" FontSize="Medium" FontAttributes="Bold" Grid.Column="1" />
+                        <Label Text="Designation" FontSize="Medium" FontAttributes="Bold" Grid.Column="2" />
+                        <Label Text="Department" FontSize="Medium" FontAttributes="Bold" Grid.Column="3" />
+                        <Label Text="Qualification" FontSize="Medium" FontAttributes="Bold" Grid.Column="4" />
+                    </Grid>
+                </DataTemplate>
+            </ListView.HeaderTemplate>
+            <ListView.ItemTemplate>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="30" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="80" />
+                        <ColumnDefinition Width="80" />
+                        <ColumnDefinition Width="80" />
+                    </Grid.ColumnDefinitions>
+
+                    <Label Text="{Binding EmpId}" FontSize="Medium" />
+                    <Label Text="{Binding EmpName}" FontSize="Medium" Grid.Column="1" />
+                    <Label Text="{Binding Designation}" FontSize="Medium" Grid.Column="2" />
+                    <Label Text="{Binding Department}" FontSize="Medium" Grid.Column="3" />
+                    <Label Text="{Binding Qualification}" FontSize="Medium" Grid.Column="4" />
+                </Grid>
+            </ListView.ItemTemplate>
+        </ListView>
+    </ContentPage.Content>
+</ContentPage>
