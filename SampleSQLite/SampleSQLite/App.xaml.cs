@@ -20,7 +20,7 @@ namespace SampleSQLite
         {
             get
             {
-                if (dbUtils != null)
+                if (dbUtils == null)
                     dbUtils = new DataAccess();
                 return dbUtils;
             }

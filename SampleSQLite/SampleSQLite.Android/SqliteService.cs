@@ -14,10 +14,12 @@ using Android.Widget;
 using System.IO;
 using Xamarin.Forms;
 using SQLite.Net;
+using SampleSQLite.Droid;
 
+[assembly:Dependency(typeof(SqliteService))]
 namespace SampleSQLite.Droid
 {
-    public class SqliteService
+    public class SqliteService : ISQLite
     {
         public SQLiteConnection GetConnection()
         {
