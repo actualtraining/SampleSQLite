@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using SQLite.Net;
+using SQLite;
 
 namespace SampleSQLite
 {
-    public interface ISQLite
+    public class DataAccess
     {
-        SQLiteConnection GetConnection();
+
     }
 }
