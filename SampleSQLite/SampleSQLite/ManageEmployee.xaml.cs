@@ -18,8 +18,14 @@ namespace SampleSQLite
             var empList = App.DBUtils.GetAllEmployee();
             lvData.ItemsSource = empList;
             lvData.ItemSelected += LvData_ItemSelected;
-
             menuInsert.Clicked += MenuInsert_Clicked;
+        }
+
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            var empList = App.DBUtils.GetAllEmployee();
+            lvData.ItemsSource = empList;
         }
 
         private async void MenuInsert_Clicked(object sender, EventArgs e)

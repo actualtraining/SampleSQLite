@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SampleSQLite.ShowEmployee" Title="Detail Employee">
+    <ContentPage.Content>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="150" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+
+                <RowDefinition Height="40" />
+                <RowDefinition Height="40" />
+                <RowDefinition Height="40" />
+                <RowDefinition Height="40" />
+                <RowDefinition Height="40" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <Label Text="Emp Name :" HorizontalTextAlignment="End" VerticalTextAlignment="Center" FontSize="Medium" />
+            <Entry Text="{Binding EmpName}" x:Name="txtName" Placeholder="insert emp name" Grid.Column="1" />
+
+            <Label Text="Designation :" HorizontalTextAlignment="End" VerticalTextAlignment="Center" 
+                   FontSize="Medium" Grid.Column="0" Grid.Row="1"  />
+            <Entry Text="{Binding Designation}" x:Name="txtDesignation" Placeholder="insert designation" Grid.Column="1" Grid.Row="1" />
+
+            <Label Text="Department :" HorizontalTextAlignment="End" VerticalTextAlignment="Center" 
+                   FontSize="Medium" Grid.Column="0" Grid.Row="2"  />
+            <Entry x:Name="txtDesignation" Text="{Binding Department}" Placeholder="insert department" Grid.Column="1" Grid.Row="2" />
+
+            <Label Text="Qualification :" HorizontalTextAlignment="End" VerticalTextAlignment="Center" 
+                   FontSize="Medium" Grid.Column="0" Grid.Row="3"  />
+            <Entry x:Name="txtQualification" Text="{Binding Qualification}" Placeholder="insert qualification" Grid.Column="1" Grid.Row="3" />
+
+            <StackLayout Orientation="Horizontal" Grid.Column="1" Grid.Row="4">
+                <Button x:Name="btnEdit" Text="Edit" />
+                <Button x:Name="btnDelete" Text="Delete" />
+            </StackLayout>
+        </Grid>
+       
+    </ContentPage.Content>
+</ContentPage>
