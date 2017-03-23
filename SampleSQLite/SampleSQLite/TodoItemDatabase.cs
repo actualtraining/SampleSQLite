@@ -11,11 +11,12 @@ namespace SampleSQLite
     
     public class TodoItemDatabase
     {
+        
         SQLiteConnection database;
 
         public TodoItemDatabase()
         {
-            database = DependencyService.Get<>();
+            database = DependencyService.Get<ISQLite>().GetConnection();
         }
     }
 }
