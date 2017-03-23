@@ -3,6 +3,36 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="SampleSQLite.InsertEmployee" Title="Insert Employee">
     <ContentPage.Content>
-        
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="150" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40" />
+                <RowDefinition Height="40" />
+                <RowDefinition Height="40" />
+                <RowDefinition Height="40" />
+                <RowDefinition Height="40" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <Label Text="Emp Name :" HorizontalTextAlignment="End" VerticalTextAlignment="Center" FontSize="Medium" />
+            <Entry x:Name="txtEmpName" Placeholder="insert emp name" Grid.Column="1" />
+
+            <Label Text="Designation :" HorizontalTextAlignment="End" VerticalTextAlignment="Center" 
+                   FontSize="Medium" Grid.Column="0" Grid.Row="1"  />
+            <Entry x:Name="txtDesignation" Placeholder="insert designation" Grid.Column="1" Grid.Row="1" />
+
+            <Label Text="Department :" HorizontalTextAlignment="End" VerticalTextAlignment="Center" 
+                   FontSize="Medium" Grid.Column="0" Grid.Row="2"  />
+            <Entry x:Name="txtDepartment" Placeholder="insert department" Grid.Column="1" Grid.Row="2" />
+
+            <Label Text="Qualification :" HorizontalTextAlignment="End" VerticalTextAlignment="Center" 
+                   FontSize="Medium" Grid.Column="0" Grid.Row="3"  />
+            <Entry x:Name="txtQualification" Placeholder="insert qualification" Grid.Column="1" Grid.Row="3" />
+
+            <Button x:Name="btnSave" Text="Save" Grid.Column="1" Grid.Row="4" />
+        </Grid>
     </ContentPage.Content>
 </ContentPage>
