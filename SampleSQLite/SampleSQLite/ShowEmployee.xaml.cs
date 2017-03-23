@@ -15,6 +15,20 @@ namespace SampleSQLite
         public ShowEmployee()
         {
             InitializeComponent();
+            btnEdit.Clicked += BtnEdit_Clicked;
+        }
+
+        private void BtnEdit_Clicked(object sender, EventArgs e)
+        {
+            var editEmployee = new Employee
+            {
+                EmpId = Convert.ToInt64(txtEmpID.Text),
+                EmpName = txtName.Text,
+                Department = txtDepartment.Text,
+                Designation = txtDesignation.Text,
+                Qualification = txtQualification.Text
+            };
+
         }
     }
 }

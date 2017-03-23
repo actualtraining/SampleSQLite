@@ -15,8 +15,6 @@ namespace SampleSQLite
         public ManageEmployee()
         {
             InitializeComponent();
-            var empList = App.DBUtils.GetAllEmployee();
-            lvData.ItemsSource = empList;
             lvData.ItemSelected += LvData_ItemSelected;
             menuInsert.Clicked += MenuInsert_Clicked;
         }

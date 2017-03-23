@@ -30,7 +30,7 @@
 
             <Label Text="Department :" HorizontalTextAlignment="End" VerticalTextAlignment="Center" 
                    FontSize="Medium" Grid.Column="0" Grid.Row="2"  />
-            <Entry x:Name="txtDesignation" Text="{Binding Department}" Placeholder="insert department" Grid.Column="1" Grid.Row="3" />
+            <Entry x:Name="txtDepartment" Text="{Binding Department}" Placeholder="insert department" Grid.Column="1" Grid.Row="3" />
 
             <Label Text="Qualification :" HorizontalTextAlignment="End" VerticalTextAlignment="Center" 
                    FontSize="Medium" Grid.Column="0" Grid.Row="3"  />
