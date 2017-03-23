@@ -40,6 +40,9 @@
     </Compile>
     <Compile Include="DataAccess.cs" />
     <Compile Include="Employee.cs" />
+    <Compile Include="InsertEmployee.xaml.cs">
+      <DependentUpon>InsertEmployee.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ISQLite.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
@@ -82,6 +85,12 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="ManageEmployee.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="InsertEmployee.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
