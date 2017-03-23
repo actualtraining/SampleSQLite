@@ -13,7 +13,7 @@ using Android.Widget;
 
 using System.IO;
 using Xamarin.Forms;
-using SQLite;
+using SQLite.Net;
 
 namespace SampleSQLite.Droid
 {
@@ -26,7 +26,9 @@ namespace SampleSQLite.Droid
             var path = Path.Combine(documentPath, sqliteFilename);
             if (!File.Exists(path))
                 File.Create(path);
-            
+            var plat = new SQLite.Net.Platform.XamarinAndroid.SQLitePlatformAndroid();
+            var conn = new SQLiteConnection(plat, path);
+            return conn;
         }
     }
 }
